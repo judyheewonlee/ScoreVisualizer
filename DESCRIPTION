@@ -1,16 +1,16 @@
-Package: ScoreVisualizer
-Title: Score Visualizer
-Version: 1.0
+Package: Nh3D2.0
+Title: Nh3D 2.0 (Non-homologous 3D Dataset)
+Version: 2.0
 Date: 2018 September
 Authors@R: person("Heewon", "Lee", email = "heewon.lee@mail.utoronto.ca", role = c("aut", "cre"))
 License: GPL-3
-Description: Score Visualizer is a tool to generate a visual output of the scoring of multiple sequence alignments
+Description: Nh3D is a R-Package to retrieve a non-homologous 3D dataset from the PDB and CATH database
 Depends: R (>= 3.4.2)
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/judyheewonlee/ScoreVisualizer
+URL: https://github.com/judyheewonlee/Nh3D2.0
 RoxygenNote: 6.0.1
-Imports: AlignStat
+Imports: 
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
