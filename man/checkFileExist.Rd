@@ -2,7 +2,8 @@
 % Please edit documentation in R/checkFileExists.R
 \name{checkFileExist}
 \alias{checkFileExist}
-\title{checkFileExist}
+\title{checkFileExist
+Taken from previous project, AQE}
 \usage{
 checkFileExist(file)
 }
@@ -17,5 +18,10 @@ it is, prompt the user if they would like to overwrite. If no,
 then stop the running functions.
 
 Details.
+}
+\examples{
+filepath <- "data/sampleref.fasta"
+checkFileExist(filepath)
+
 }
 \keyword{internal}

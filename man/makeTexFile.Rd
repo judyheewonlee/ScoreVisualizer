@@ -20,12 +20,39 @@ generate the sum of pairs in their output}
 \item{CS}{A boolean value left TRUE if the user would like
 to generate the total column score in their output}
 
-\item{file}{The preferred name of the output file}
+\item{filename}{The preferred name of the output file}
+
+\item{filepaths}{The paths to the copied and modified alignment
+files}
+
+\item{score}{The pairwise alignment score object generated 
+by AlignStat of the two alignments provided by the user}
+
+\item{scorePaths}{The path to the data containing columnwise scores
+for the sum of pairs score and total column score}
+}
+\value{
+The filepath to the generated Tex file is returned
 }
 \description{
-The \code{makeScoreFile} function generates score files
-containing columnwise sum of pairs score and total column
-score. 
+The \code{makeTexFile} function generates the LaTeX file
+that generates the visual output of the scoring between
+the given alignments.
 
 Details.
 }
+\examples{
+reference <- "data/BB11017ClustalW.fasta"
+test <- "data/BB11017Muscle.fasta"
+fileName <- "sampleTest2"
+
+score <- getScore(reference, test)
+filePaths <- modifyAlns(reference, test, fileName)
+scorePaths <- makeScoreFile(reference, compare, SP, CS, fileName, score)
+
+texpath <- makeTexFile(reference, test, fileName, filepaths, score,
+                      scorePaths)
+texpath
+
+}
+\keyword{internal}

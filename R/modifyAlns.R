@@ -23,8 +23,16 @@
 #' 
 #' @return The filepaths of the copied and modified alignments that
 #' will be used to generate the tex file
+#' 
+#' @example 
+#' reference <- "data/BB11017ClustalW.fasta"
+#' test <- "data/BB11017Muscle.fasta"
+#' 
+#' filepaths <- modifyAlns(reference, compare, "Test3")
+#' filepaths
 #'
 #' @export
+#' @keywords internal
 #' 
 
 modifyAlns <- function(reference, compare, filename) {

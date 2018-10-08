@@ -20,6 +20,13 @@
 #' @param CS A boolean value left TRUE if the user would like
 #' to generate the total column score in their output
 #' 
+#' @return The Pairwise alignment comparison object from the two
+#' alignments provided
+#' 
+#' @examples 
+#' score <- getScore("data/sampleref.fasta", "data/sampleMuscle.fasta")
+#' score
+#' 
 #' @export
 #' 
 

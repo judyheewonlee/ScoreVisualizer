@@ -22,6 +22,11 @@
 #' 
 #' @param fileName The preferred name of the output file
 #' 
+#' @examples 
+#' reference <- "data/BB11017ClustalW.fasta"
+#' test <- "data/BB11017Muscle.fasta"
+#' ScoreVisualizer(reference, test)
+#' 
 #' @export
 #'
 
@@ -54,5 +59,8 @@ ScoreVisualizer <- function(reference, compare, SP = TRUE, CS = TRUE, fileName=N
   #Delete temporary files
   filePaths <- c(scorePaths, filePaths)
   deleteFiles(filePaths)
+  
+  #Print out completion statement
+  cat("The PDF was successfully generated!")
   
 }

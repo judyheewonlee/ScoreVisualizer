@@ -19,12 +19,19 @@ generate the sum of pairs in their output}
 \item{CS}{A boolean value left TRUE if the user would like
 to generate the total column score in their output}
 
-\item{file}{The preferred name of the output file}
+\item{fileName}{The preferred name of the output file}
 }
 \description{
-The \code{makeScoreFile} function generates score files
-containing columnwise sum of pairs score and total column
-score. 
+The \code{ScoreVisualizer} function is the main function
+for the ScoreVisualizer package. It calls the helper functions
+and generates a visual output to show the degree of scoring
+within two alignments. 
 
 Details.
+}
+\examples{
+reference <- "data/BB11017ClustalW.fasta"
+test <- "data/BB11017Muscle.fasta"
+ScoreVisualizer(reference, test)
+
 }

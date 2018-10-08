@@ -3,7 +3,8 @@
 #' @description
 #' The \code{makeScoreFile} function generates score files
 #' containing columnwise sum of pairs score and total column
-#' score. 
+#' score. These files are utilized by LaTeX to generate
+#' the graphs representing the scores in the alignments.
 #'
 #' Details.
 #'
@@ -20,8 +21,16 @@
 #' to generate the total column score in their output
 #' 
 #' @param file The preferred name of the output file
-#'
+#' 
+#' @return A vector containing the paths to the score files
+#' 
+#' @examples 
+#' score <- getScore("data/sampleref.fasta", "data/sampleMuscle.fasta")
+#' makeScoreFile("data/sampleref.fasta", "data/sampleMuscle.fasta", 
+#'                   fileName = "Test1")
+#' 
 #' @export
+#' @keywords internal
 #' 
 
 makeScoreFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
@@ -29,7 +38,7 @@ makeScoreFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
   
   #Get the column wise sum of pairs score and total column score
   spScore <- unlist(score$sum_of_pairs$columnwise.SPS)
-  tcScore <- unlist(score$column_score$columnwise.column.score)
+  tcScore <- (unlist(score$column_score$columnwise.column.score))
   
   #Create a temporary files to store scores
   if (is.null(filename)) {

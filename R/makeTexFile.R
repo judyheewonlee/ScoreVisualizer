@@ -31,8 +31,22 @@
 #' for the sum of pairs score and total column score
 #' 
 #' @return The filepath to the generated Tex file is returned
+#' 
+#' @examples 
+#' reference <- "data/BB11017ClustalW.fasta"
+#' test <- "data/BB11017Muscle.fasta"
+#' fileName <- "sampleTest2"
+#' 
+#' score <- getScore(reference, test)
+#' filePaths <- modifyAlns(reference, test, fileName)
+#' scorePaths <- makeScoreFile(reference, compare, SP, CS, fileName, score)
+#' 
+#' texpath <- makeTexFile(reference, test, fileName, filepaths, score,
+#'                       scorePaths)
+#' texpath
 #'
 #' @export
+#' @keywords internal
 #' 
 
 

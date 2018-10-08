@@ -21,10 +21,21 @@ to generate the total column score in their output}
 
 \item{file}{The preferred name of the output file}
 }
+\value{
+A vector containing the paths to the score files
+}
 \description{
 The \code{makeScoreFile} function generates score files
 containing columnwise sum of pairs score and total column
-score. 
+score. These files are utilized by LaTeX to generate
+the graphs representing the scores in the alignments.
 
 Details.
 }
+\examples{
+score <- getScore("data/sampleref.fasta", "data/sampleMuscle.fasta")
+makeScoreFile("data/sampleref.fasta", "data/sampleMuscle.fasta", 
+                  fileName = "Test1")
+
+}
+\keyword{internal}

@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage{texshade}
+ 
+\begin{document}
+\textbf{Test Alignment}
+ 
+\begin{texshade}{data/outputCom.fasta}
+ 
+\feature{bottom}{sample}{1..81}{bar[0,1]:data/outputTC.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\newpage
+\textbf{Reference Alignment}
+\begin{texshade}{data/outputRef.fasta}
+ 
+\feature{bottom}{sample}{1..81}{bar[0,1]:data/outputTC.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\end{document}

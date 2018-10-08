@@ -16,3 +16,9 @@ files given the filepath
 
 Details.
 }
+\examples{
+filePaths <- c("data/BB11017ClustalW.fasta", "data/BB11017Muscle.fasta")
+deleteFiles(filePaths)
+
+}
+\keyword{internal}

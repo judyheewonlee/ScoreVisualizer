@@ -19,6 +19,10 @@ generate the sum of pairs in their output}
 \item{CS}{A boolean value left TRUE if the user would like
 to generate the total column score in their output}
 }
+\value{
+The Pairwise alignment comparison object from the two
+alignments provided
+}
 \description{
 The \code{getScore} function generates a "Pairwise alignment
 comparison" (PAC) object which contains the sum of pairs
@@ -26,4 +30,9 @@ score and the total column score of two multiple sequence
 alignments.
 
 Details.
+}
+\examples{
+score <- getScore("data/sampleref.fasta", "data/sampleMuscle.fasta")
+score
+
 }
