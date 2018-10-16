@@ -13,7 +13,6 @@
 #' filePaths <- c("data/BB11017ClustalW.fasta", "data/BB11017Muscle.fasta")
 #' deleteFiles(filePaths)
 #'
-#' @export
 #' @keywords internal
 #'
 
@@ -26,3 +25,6 @@ deleteFiles <- function(filePaths) {
     }
   }
 }
+
+
+# [END]

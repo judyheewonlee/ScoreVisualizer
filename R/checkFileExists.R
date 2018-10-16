@@ -16,7 +16,6 @@
 #' filepath <- "data/sampleref.fasta"
 #' checkFileExist(filepath)
 #'
-#' @export
 #' @keywords internal
 #' 
 
@@ -35,3 +34,5 @@ checkFileExist <- function(file) {
     }
   }
 }
+
+# [END]

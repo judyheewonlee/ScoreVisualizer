@@ -64,3 +64,5 @@ ScoreVisualizer <- function(reference, compare, SP = TRUE, CS = TRUE, fileName=N
   cat("The PDF was successfully generated!")
   
 }
+
+# [END]

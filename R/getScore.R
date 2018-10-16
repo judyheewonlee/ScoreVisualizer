@@ -39,3 +39,5 @@ getScore <- function(reference, compare, SP = TRUE, CS = TRUE) {
   
   return(score)
 }
+
+# [END]

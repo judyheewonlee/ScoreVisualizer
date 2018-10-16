@@ -5,8 +5,8 @@ context("modifyAlns")
 
 # ==== BEGIN SETUP AND PREPARE =================================================
 #
-reference <- "data/sampleref.fasta"
-testAln <- "data/sampleMuscle.fasta"
+reference <- system.file("data/sampleref.fasta", package = "ScoreVisualizer")
+testAln <- system.file("data/sampleMuscle.fasta",package = "ScoreVisualizer")
 
 fileName <- "testing"
 filepaths <- c("data/testingRef.fasta", "data/testingCom.fasta")

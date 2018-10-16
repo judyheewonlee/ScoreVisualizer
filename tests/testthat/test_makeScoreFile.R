@@ -4,13 +4,13 @@ context("makeScoreFile")
 
 # ==== BEGIN SETUP AND PREPARE =================================================
 #
-reference <- "data/sampleref.fasta"
-testAln <- "data/sampleMuscle.fasta"
+reference <- system.file("data/sampleref.fasta", package = "ScoreVisualizer")
+testAln <- system.file("data/sampleMuscle.fasta", package = "ScoreVisualizer")
 
 fileName <- "testing"
 score <- AlignStat::compare_alignments(reference, testAln, SP=TRUE, CS=TRUE)
-filepaths <- c("data/testingSPS.txt", "data/testingTC.txt")
-
+scorePath <- makeScoreFile(reference, testAln, filename = fileName, score = score)
+filepaths <-  c("data/testingSPS.txt", "data/testingTC.txt")
 #
 # ==== END SETUP AND PREPARE ===================================================
 
@@ -21,8 +21,7 @@ test_that("corrupt input generates errors",  {
 })
 
 test_that("a sample input prouces the expected output",  {
-  expect_equal(makeScoreFile(reference, testAln, filename = fileName, score = score), 
-               filepaths)
+  expect_identical(scorePath, filepaths)
 })
 
 

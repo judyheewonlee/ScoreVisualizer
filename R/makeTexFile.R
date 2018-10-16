@@ -45,10 +45,8 @@
 #'                       scorePaths)
 #' texpath
 #'
-#' @export
 #' @keywords internal
 #' 
-
 
 makeTexFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
                         filepaths, score, scorePaths) {
@@ -140,3 +138,5 @@ makeTexFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
   write(texOutput, file = texFile)
   return (texFile)
 }
+
+# [END]

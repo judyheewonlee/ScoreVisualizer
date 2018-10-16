@@ -4,7 +4,8 @@
 \alias{ScoreVisualizer}
 \title{ScoreVisualizer.R}
 \usage{
-ScoreVisualizer(reference, compare, SP = TRUE, CS = TRUE, fileName = NULL)
+ScoreVisualizer(reference, compare, SP = TRUE, CS = TRUE,
+  fileName = NULL)
 }
 \arguments{
 \item{reference}{A directory path to the reference alignment

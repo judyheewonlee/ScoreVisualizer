@@ -64,3 +64,5 @@ makeScoreFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
   return (scorePaths)
   
 }
+
+# [END]

@@ -4,7 +4,8 @@
 \alias{makeScoreFile}
 \title{makeScoreFile}
 \usage{
-makeScoreFile(reference, compare, SP = TRUE, CS = TRUE, filename, score)
+makeScoreFile(reference, compare, SP = TRUE, CS = TRUE, filename,
+  score)
 }
 \arguments{
 \item{reference}{A directory path to the reference alignment

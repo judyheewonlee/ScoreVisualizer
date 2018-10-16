@@ -4,8 +4,8 @@
 \alias{makeTexFile}
 \title{makeTexFile.R}
 \usage{
-makeTexFile(reference, compare, SP = TRUE, CS = TRUE, filename, filepaths,
-  score, scorePaths)
+makeTexFile(reference, compare, SP = TRUE, CS = TRUE, filename,
+  filepaths, score, scorePaths)
 }
 \arguments{
 \item{reference}{A directory path to the reference alignment

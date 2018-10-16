@@ -31,7 +31,6 @@
 #' filepaths <- modifyAlns(reference, compare, "Test3")
 #' filepaths
 #'
-#' @export
 #' @keywords internal
 #' 
 
@@ -49,9 +48,9 @@ modifyAlns <- function(reference, compare, filename) {
   compareAln <- Biostrings::readBStringSet(compare)
   
   sampleRefSeq <- Biostrings::BStringSet(strrep("X", 
-                                                  width(referenceAln)[1]))
+                                        Biostrings::width(referenceAln)[1]))
   sampleCompareSeq <- Biostrings::BStringSet(strrep("X", 
-                                                      width(compareAln)[1]))
+                                        Biostrings::width(compareAln)[1]))
   
   #Add a title to the sample sequence
   names(sampleRefSeq) <- "sample"
@@ -81,3 +80,5 @@ modifyAlns <- function(reference, compare, filename) {
   return(result)
   
 }
+
+# [END]

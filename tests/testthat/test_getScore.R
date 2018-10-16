@@ -4,9 +4,9 @@ context("getScore")
 
 # ==== BEGIN SETUP AND PREPARE =================================================
 #
-reference <- "data/sampleref.fasta"
-testAln <- "data/sampleMuscle.fasta"
-fakeFile <- "data/sampleTest.fasta"
+reference <- system.file("data/sampleref.fasta", package = "ScoreVisualizer")
+testAln <- system.file("data/sampleMuscle.fasta", package = "ScoreVisualizer")
+fakeFile <- system.file("data/sampleTest.fasta", package = "ScoreVisualizer")
 
 score <- AlignStat::compare_alignments(reference, testAln, SP=TRUE, CS=TRUE)
 
@@ -15,7 +15,7 @@ score <- AlignStat::compare_alignments(reference, testAln, SP=TRUE, CS=TRUE)
 
 test_that("corrupt input generates errors",  {
   expect_error(getScore(), "argument \"reference\" is missing, with no default")
-  expect_error(getScore(reference, fakeFile), "File data/sampleTest.fasta is not readable")
+  expect_error(getScore(reference, fakeFile), "File  is not readable")
 })
 
 test_that("a sample input prouces the expected output",  {

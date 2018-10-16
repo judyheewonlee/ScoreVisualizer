@@ -4,9 +4,9 @@ context("makeTexFile")
 
 # ==== BEGIN SETUP AND PREPARE =================================================
 #
-reference <- "data/sampleref.fasta"
-testAln <- "data/sampleMuscle.fasta"
-fakeFile <- "data/sampleTest.fasta"
+reference <- "/Users/judylee/Documents/BCB410/ScoreVisualizer/data/sampleref.fasta"
+testAln <- "/Users/judylee/Documents/BCB410/ScoreVisualizer/data/sampleMuscle.fasta"
+fakeFile <- "/Users/judylee/Documents/BCB410/ScoreVisualizer/data/sampleTest.fasta"
 filepaths <- c(reference, testAln)
 fileName <- "testing"
 
