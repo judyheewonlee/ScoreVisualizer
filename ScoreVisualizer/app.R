@@ -13,10 +13,10 @@ server <- shinyServer(function(input, output) {
     
     observeEvent(input$generate, {
       output$pdfview <- renderUI({
-        pdf("www/sampleOutput.pdf")
+        shiny::pdf("www/sampleOutput.pdf")
         hist(rnorm(100))
         dev.off()
-        tags$iframe(style="height:600px; width:100%", src="sampleOutput.pdf")
+        tags$iframe(style="height:600px; width:100%", src="www/sampleOutput.pdf")
       })
     })
   })
@@ -37,15 +37,15 @@ ui <- shinyUI(fluidPage(
     #Panel options for user
     sidebarPanel(
       textInput("caption", "Caption:", "Data Summary"),
-      
-      selectInput("dataset1", "Choose a reference alignment method:", 
+
+      selectInput("dataset1", "Choose a reference alignment method:",
                   choices = c("MUSCLE", "ClustalW", "ClustalOmega")),
-      
+
       selectInput("dataset2", "Choose a test alignment method:",
                   choices = c("MUSCLE", "ClustalW", "ClustalOmega")),
-      
+
       checkboxInput("columnScore", "Show column score", FALSE),
-      
+
       checkboxInput("sumScore", "Show sum-of-pairs score", FALSE),
       
       actionButton("generate", "Generate PDF")
