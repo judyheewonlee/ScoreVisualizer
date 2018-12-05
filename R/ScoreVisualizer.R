@@ -32,6 +32,9 @@
 
 ScoreVisualizer <- function(reference, compare, SP = TRUE, CS = TRUE, fileName=NULL) {
   
+  reference <- paste(getwd(), "/", reference, sep = "")
+  compare <- paste(getwd(), "/", compare, sep = "")
+  
   #Ensure alignment file paths exists
   if (!file.exists(reference) || !file.exists(compare)) {
     stop("Please enter valid filepaths!\n")
@@ -52,13 +55,26 @@ ScoreVisualizer <- function(reference, compare, SP = TRUE, CS = TRUE, fileName=N
   texFile <- makeTexFile(reference, compare, SP, CS, fileName, filePaths,
                          score, scorePaths)
   
+  
   #Call texi2dvi/pdf function to convert the tex file into 
   #a pdf of dvi file
-  tools::texi2pdf(texFile)
+  tools::texi2pdf(texFile, clean = TRUE)
   
-  #Delete temporary files
-  filePaths <- c(scorePaths, filePaths)
-  deleteFiles(filePaths)
+  #Rename the generated PDF file
+  texFileName <- paste(tools::file_path_sans_ext(basename(texFile)), 
+                       ".pdf",
+                       sep = "")
+  noFileName <- "texOutput.pdf"
+  if (!is.null(fileName)) {
+    checkFileExist(fileName)
+    file.rename(texFileName, paste(fileName, ".pdf",
+                                  sep = ""))
+  }
+  
+  else {
+    checkFileExist(noFileName)
+    file.rename(texFileName, noFileName)
+  }
   
   #Print out completion statement
   cat("The PDF was successfully generated!")

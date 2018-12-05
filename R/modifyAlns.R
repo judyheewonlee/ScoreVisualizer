@@ -62,15 +62,18 @@ modifyAlns <- function(reference, compare, filename) {
   
   #Write the alignments to temporary files in the package data 
   #directory
-  if (is.null(filename)) {
-    filepathRef <- "data/outputRef.fasta"
-    filepathCom <- "data/outputCom.fasta"
-  }
+  # if (is.null(filename)) {
+  #   filepathRef <- "data/outputRef.fasta"
+  #   filepathCom <- "data/outputCom.fasta"
+  # }
+  # 
+  # else {
+  #   filepathRef <- paste("data/", filename, "Ref.fasta", sep="")
+  #   filepathCom <- paste("data/", filename, "Com.fasta", sep="")
+  # }
   
-  else {
-    filepathRef <- paste("data/", filename, "Ref.fasta", sep="")
-    filepathCom <- paste("data/", filename, "Com.fasta", sep="")
-  }
+  filepathRef <- tempfile(pattern = "file", fileext = ".fasta", tmpdir = "inst/tmp")
+  filepathCom <- tempfile(pattern = "file", fileext = ".fasta", tmpdir = "inst/tmp")
   
   Biostrings::writeXStringSet(referenceAln, filepath = filepathRef)
   Biostrings::writeXStringSet(compareAln, filepath = filepathCom)

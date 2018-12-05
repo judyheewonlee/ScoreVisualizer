@@ -51,22 +51,15 @@
 makeTexFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
                         filepaths, score, scorePaths) {
   
-  #get file paths
+  #Get file paths
   filepathRef <- filepaths[1]
   filepathCom <- filepaths[2]
   spScorePath <- scorePaths[1]
   tcScorePath <- scorePaths[2]
   
-  #Generate the Tex File for the visual output of the alignment comparison
-  if (is.null(filename)) {
-    texFile <- "texOutput.tex"
-  }
-  else{
-    texFile <- paste(filename, ".tex", sep = "")
-  }
-  
-  #Check if there is already a tex file with the same name
-  checkFileExist(texFile)
+  #Generate a temporary Tex File for the visual output of the alignment comparison
+  texFile <- tempfile(pattern = "file", fileext = ".tex", tmpdir = "inst/tmp")
+
   
   #Write to a .tex file
   texHead <- c("\\documentclass[12pt]{article}",

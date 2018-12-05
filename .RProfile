@@ -14,7 +14,8 @@
 # ====================== Score Visualizer ========================= #
 
 .First <- function() {
-  cat(" Welcome to Score Visualizer version 1.0.",
+  cat(" Welcome to Score Visualizer version 1.0. \n",
+      "Load the package using devtools::install_github(\"judyheewonlee/ScoreVisualizer\")\n",
       "Refer to the Sample R Script to find examples",
       "on how to use Score Visualizer.\n\n")
 }

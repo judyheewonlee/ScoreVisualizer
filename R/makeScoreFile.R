@@ -29,7 +29,6 @@
 #' makeScoreFile("data/sampleref.fasta", "data/sampleMuscle.fasta", 
 #'                   fileName = "Test1")
 #' 
-#' @export
 #' @keywords internal
 #' 
 
@@ -40,17 +39,11 @@ makeScoreFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
   spScore <- unlist(score$sum_of_pairs$columnwise.SPS)
   tcScore <- (unlist(score$column_score$columnwise.column.score))
   
-  #Create a temporary files to store scores
-  if (is.null(filename)) {
-    filepathSP <- "data/outputSPS.txt"
-    filepathTC <- "data/outputTC.txt"
-  }
+  #Create temporary files to store scores
   
-  else {
-    filepathSP <- paste("data/", filename, "SPS.txt", sep="")
-    filepathTC <- paste("data/", filename, "TC.txt", sep="")
-  }
-  
+  filepathSP <- tempfile(pattern = "file", fileext = ".txt", tmpdir = "inst/tmp")
+  filepathTC <- tempfile(pattern = "file", fileext = ".txt", tmpdir = "inst/tmp")
+
   #Write the scores in temporary files for each score
   if (!is.null(spScore)) {
     write(spScore, file = filepathSP, ncolumns = 1)
