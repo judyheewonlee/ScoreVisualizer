@@ -73,10 +73,6 @@ ui <- shinyUI(fluidPage(
                          c("Column Score" = "col",
                            "Sum-of-Pairs Score" = "sum")),
       
-      # checkboxInput("columnScore", "Show column score", value = TRUE),
-      # 
-      # checkboxInput("sumScore", "Show sum-of-pairs score", value = TRUE),
-
       actionButton("generate", "Generate PDF")
       
     ),
