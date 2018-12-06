@@ -57,8 +57,10 @@ makeTexFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
   spScorePath <- scorePaths[1]
   tcScorePath <- scorePaths[2]
   
-  #Generate a temporary Tex File for the visual output of the alignment comparison
-  texFile <- tempfile(pattern = "file", fileext = ".tex", tmpdir = "inst/tmp")
+  #Generate a temporary Tex File for the visual output of the alignment 
+  #comparison
+  texFile <- tempfile(pattern = "file", fileext = ".tex", 
+                      tmpdir = "inst/tmp")
 
   
   #Write to a .tex file

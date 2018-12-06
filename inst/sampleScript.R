@@ -20,6 +20,7 @@
 # #TOC>   1        Initalizing ScoreVisualizer                               26
 # #TOC>   2        Running ScoreVisualizer                                   38
 # #TOC>   3        Using getScore                                            65
+# #TOC>   4        Using the ShinyApp For ScoreVisualizer                    79
 # #TOC>
 # #TOC> ==========================================================================
 #
@@ -28,7 +29,9 @@
 # # Score Visualizer utilizes the AlignStat, Biostrings and TexShade/LaTex in order
 # # generate a multiple sequence alignment and the corresponding 
 # # total column and sum-of-pairs score as a visual output. The format the output
-# # is a PDF file that is generated in the user's working directory. In order to 
+# # is a PDF file that is generated in the user's working directory.A sample
+# # output is also provided in the inst directory. Additionally, sample .fasta
+# # files can be found in the data directory. In order to 
 # # run ScoreVisualizer, you can first load the package using:
 #
 #
@@ -75,6 +78,17 @@
 # # score or sum-of-pairs score in their result.
 #
 #
+# # ================== 4. Using the ShinyApp For ScoreVisualizer ========================= #
 #
+# # There is a shiny implementation for ScoreVisualizer, it is found in the inst/ShinyApp folder
+# # To run the shiny app, simply type the followin command:
+#
+# shinyApp(ui = ui, server = server)
+#
+#
+# # A seperate window will appear and the user may provide two input fasta files that the user
+# # wants to compare. There is also the choice of creating a filename to the produced PDF file and
+# # a choice in selecting whether the user would like to include both or either the sum-of-pairs 
+# # Total column scores. Sample .fasta alignment files can be found in the package /data folder.
 #
 # [END]

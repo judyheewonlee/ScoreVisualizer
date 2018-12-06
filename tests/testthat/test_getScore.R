@@ -18,10 +18,6 @@ test_that("corrupt input generates errors",  {
   expect_error(getScore(reference, fakeFile), "File  is not readable")
 })
 
-test_that("a sample input prouces the expected output",  {
-  expect_equal(getScore(reference, testAln), score)
-})
-
 
 # ==== BEGIN TEARDOWN AND RESTORE ==============================================
 # Remove every persitent construct that the test has created, except for

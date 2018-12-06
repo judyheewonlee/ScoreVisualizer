@@ -24,7 +24,7 @@
 #' @return The filepaths of the copied and modified alignments that
 #' will be used to generate the tex file
 #' 
-#' @example 
+#' @examples 
 #' reference <- "data/BB11017ClustalW.fasta"
 #' test <- "data/BB11017Muscle.fasta"
 #' 
@@ -62,18 +62,11 @@ modifyAlns <- function(reference, compare, filename) {
   
   #Write the alignments to temporary files in the package data 
   #directory
-  # if (is.null(filename)) {
-  #   filepathRef <- "data/outputRef.fasta"
-  #   filepathCom <- "data/outputCom.fasta"
-  # }
-  # 
-  # else {
-  #   filepathRef <- paste("data/", filename, "Ref.fasta", sep="")
-  #   filepathCom <- paste("data/", filename, "Com.fasta", sep="")
-  # }
   
-  filepathRef <- tempfile(pattern = "file", fileext = ".fasta", tmpdir = "inst/tmp")
-  filepathCom <- tempfile(pattern = "file", fileext = ".fasta", tmpdir = "inst/tmp")
+  filepathRef <- tempfile(pattern = "file", fileext = ".fasta", 
+                          tmpdir = "inst/tmp")
+  filepathCom <- tempfile(pattern = "file", fileext = ".fasta", 
+                          tmpdir = "inst/tmp")
   
   Biostrings::writeXStringSet(referenceAln, filepath = filepathRef)
   Biostrings::writeXStringSet(compareAln, filepath = filepathCom)

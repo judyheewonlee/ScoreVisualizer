@@ -36,13 +36,26 @@ makeScoreFile <- function(reference, compare, SP = TRUE, CS = TRUE, filename,
                           score) {
   
   #Get the column wise sum of pairs score and total column score
-  spScore <- unlist(score$sum_of_pairs$columnwise.SPS)
-  tcScore <- (unlist(score$column_score$columnwise.column.score))
+  if (SP) {
+    spScore <- (unlist(score$sum_of_pairs$columnwise.SPS))
+  }
+  else {
+    spScore <- NULL
+  }
+  
+  if (CS) {
+    tcScore <- (unlist(score$column_score$columnwise.column.score))
+  }
+  else {
+    tcScore <- NULL
+  }
   
   #Create temporary files to store scores
   
-  filepathSP <- tempfile(pattern = "file", fileext = ".txt", tmpdir = "inst/tmp")
-  filepathTC <- tempfile(pattern = "file", fileext = ".txt", tmpdir = "inst/tmp")
+  filepathSP <- tempfile(pattern = "file", fileext = ".txt", 
+                         tmpdir = "inst/tmp")
+  filepathTC <- tempfile(pattern = "file", fileext = ".txt", 
+                         tmpdir = "inst/tmp")
 
   #Write the scores in temporary files for each score
   if (!is.null(spScore)) {

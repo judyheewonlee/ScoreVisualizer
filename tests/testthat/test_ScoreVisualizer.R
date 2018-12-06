@@ -19,11 +19,10 @@ test_that("corrupt input generates errors",  {
   
 })
 
-test_that("a sample input prouces the expected output",  {
-  expect_equal(ScoreVisualizer(reference, testAln, fileName),
-               cat("The PDF was successfully generated!"))
+test_that("corrupt input generates errors", {
+  expect_error(ScoreVisualizer(reference),
+               "argument \"compare\" is missing, with no default")
 })
-
 
 # ==== BEGIN TEARDOWN AND RESTORE ==============================================
 # Remove every persitent construct that the test has created, except for

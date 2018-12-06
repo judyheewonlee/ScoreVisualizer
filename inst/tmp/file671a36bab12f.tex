@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{texshade}
+ 
+\begin{document}
+\textbf{Test Alignment}
+ 
+\begin{texshade}{inst/tmp/file671a49b1c7e5.fasta}
+ 
+\feature{ttop}{sample}{1..299}{bar[0,1]:inst/tmp/file671a1688a7f2.txt[Red,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{ttop}{SPS}
+\hideseq{sample}
+ 
+\feature{bottom}{sample}{1..310}{bar[0,1]:inst/tmp/file671a65ca0c6c.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\newpage
+\textbf{Reference Alignment}
+\begin{texshade}{inst/tmp/file671a33f5baa9.fasta}
+ 
+\feature{ttop}{sample}{1..299}{bar[0,1]:inst/tmp/file671a1688a7f2.txt[Red,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{ttop}{SPS}
+\hideseq{sample}
+ 
+\feature{bottom}{sample}{1..310}{bar[0,1]:inst/tmp/file671a65ca0c6c.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\end{document}

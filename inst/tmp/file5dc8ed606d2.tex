@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage{texshade}
+ 
+\begin{document}
+\textbf{Test Alignment}
+ 
+\begin{texshade}{inst/tmp/file5dc842730afb.fasta}
+ 
+\feature{bottom}{sample}{1..299}{bar[0,1]:inst/tmp/file5dc861755d74.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\newpage
+\textbf{Reference Alignment}
+\begin{texshade}{inst/tmp/file5dc8604a9ca8.fasta}
+ 
+\feature{bottom}{sample}{1..299}{bar[0,1]:inst/tmp/file5dc861755d74.txt[Blue,Gray10]}{}
+\bargraphstretch{2}
+\showfeaturestylename{bottom}{TC}
+\hideseq{sample}
+ 
+\end{texshade}
+ 
+\end{document}

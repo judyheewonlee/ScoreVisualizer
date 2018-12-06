@@ -34,7 +34,6 @@ getScore <- function(reference, compare, SP = TRUE, CS = TRUE) {
   
   #Use AlignStat package to retrieve sum of pairs score or column score
   #from the provided alignments
-  
   score <- AlignStat::compare_alignments(reference, compare, SP, CS)
   
   return(score)

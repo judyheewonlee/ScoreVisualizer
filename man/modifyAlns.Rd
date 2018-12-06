@@ -32,4 +32,12 @@ alignments.
 
 Details.
 }
+\examples{
+reference <- "data/BB11017ClustalW.fasta"
+test <- "data/BB11017Muscle.fasta"
+
+filepaths <- modifyAlns(reference, compare, "Test3")
+filepaths
+
+}
 \keyword{internal}
